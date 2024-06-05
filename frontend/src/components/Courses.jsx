@@ -11,7 +11,7 @@ function Courses() {
       <p className='mt-8'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere repellat iste temporibus. Natus itaque inventore doloremque nulla ducimus ipsa repellendus sed iusto eveniet corrupti. Ducimus minima beatae et? Labore, eos?</p>
       <Link to='/'><button className='bg-pink-500 px-3 py-2 rounded-md hover:bg-pink-600 duration-300 mt-6'>Back</button></Link>
     </div>
-    <div className='mt-12 md:grid grid-cols-4'>
+    <div className='mt-12 md:grid grid-cols-4 '>
     {list.map((item) => 
         (<Cards item={item} key={item.id} />
         )) }
