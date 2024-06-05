@@ -21,7 +21,7 @@ function Banner() {
             {/* </div> */}
       </div>
     <div className='w-full order-1 md:w-1/2 grid place-items-center'>
-      <img src={BannerLogo} className='hover:scale-105 hover:drop-shadow-[0_25px_25px_rgba(0,0,0,0.25)] w-100 h-100' alt="bannerLogo" />
+      <img src={BannerLogo} className='hover:scale-105 dark:hover:drop-shadow-[0_25px_25px_rgba(220,220,220,0.17)] hover:drop-shadow-[0_25px_25px_rgba(0,0,0,0.25)] duration-300 w-100 h-100' alt="bannerLogo" />
     </div>
     </div>
     </>

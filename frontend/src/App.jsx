@@ -2,6 +2,7 @@ import React from 'react'
 import Home from './home/Home'
 import { Route, Routes } from 'react-router-dom';
 import Course from './course/Course';
+import Signup from './components/Signup';
 const App = () => {
   return (
     <>
@@ -9,6 +10,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/Courses" element={<Course/>} />
+      <Route path='/SignUp' element={<Signup/>} />
     </Routes>
     </div>
     </>
