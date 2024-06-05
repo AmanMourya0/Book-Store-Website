@@ -1,8 +1,17 @@
 import React from 'react'
-
-function App() {
+import Home from './home/Home'
+import { Route, Routes } from 'react-router-dom';
+import Course from './course/Course';
+const App = () => {
   return (
-    <div><h1>hello</h1></div>
+    <>
+    <div className=' text-black dark:bg-slate-900 dark:text-white light:bg-slate-100 '>
+    <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/Courses" element={<Course/>} />
+    </Routes>
+    </div>
+    </>
   )
 }
 
