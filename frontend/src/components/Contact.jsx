@@ -11,6 +11,7 @@ function Contact() {
       const onSubmit = (data) => console.log(data)
       return (
         <>
+           {/* <div className='max-h-screen mt-14 max-w-screen-2xl container mx-auto md:px-20 px-4 bg-white text-black dark:bg-slate-900 dark:text-white'> */}
             <div className='flex h-screen justify-center items-center '>
             <div className="w-[600px]">
             <div className="modal-box bg-white text-black dark:bg-black dark:text-white rounded-md p-10">
@@ -43,6 +44,7 @@ function Contact() {
             </div>
             </div>
         </div>
+        {/* </div> */}
         </>
       )
     }

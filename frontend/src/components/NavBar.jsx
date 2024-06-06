@@ -35,7 +35,7 @@ function NavBar() {
     const NavItems=(
         <>
         <li><Link to={'/'}>Home</Link></li>
-        <li><Link to={'/'}>About us</Link></li>
+        <li><Link to={'/AboutUs'}>About us</Link></li>
         <li><Link to={'/courses'}>Courses</Link></li>
         <li><Link to={"/ContactUs"}>Contact us</Link></li>
         </>
@@ -43,7 +43,7 @@ function NavBar() {
   return (
     <>
     <div className={` max-w-screen-2xl container mx-auto md:px-20 px-4 bg-white text-black dark:bg-slate-900 dark:text-white fixed top-0 left-0 right-0 z-50 ${
-      sticky?"sticky-navbar shadow-md bg-slate-200 dark:bg-slate-700 duration-200 transition-all ease-in-out":""
+      sticky?"sticky-navbar shadow-md bg-slate-300 dark:bg-slate-500 duration-200 transition-all ease-in-out":""
     } `} >
     <div className="navbar">
   <div className="navbar-start wd-50">
