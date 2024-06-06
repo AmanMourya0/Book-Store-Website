@@ -37,7 +37,7 @@ function NavBar() {
         <li><Link to={'/'}>Home</Link></li>
         <li><Link to={'/'}>About us</Link></li>
         <li><Link to={'/courses'}>Courses</Link></li>
-        <li><Link to={"/"}>Contact us</Link></li>
+        <li><Link to={"/ContactUs"}>Contact us</Link></li>
         </>
     )
   return (
