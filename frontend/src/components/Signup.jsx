@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from "react-hook-form"
 import Login from './Login'
+import axios from 'axios';
 
 function Signup() {
   const {
@@ -9,7 +10,27 @@ function Signup() {
     handleSubmit,
     formState: { errors },
   } = useForm()
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = async(data) => {
+    const userInfo = {
+      fullname:data.fullname,
+      email:data.email,
+      password:data.password,
+    }
+  
+  await axios.post("http://localhost:4001/user/signup",userInfo)
+  .then((res )=>{
+    console.log(res.data)
+    if (res.data){
+      alert("signUp successfull")
+    }
+  }).catch((err) => {
+    if(err.response){
+      
+    }
+    console.log("Error : ",err)
+    alert("error: "+ err)
+  })
+};
   return (
     <>
         <div className='flex h-screen justify-center items-center '>
@@ -23,9 +44,9 @@ function Signup() {
             {/* <h3 className="font-bold text-lg">Login</h3> */}
             <div className='space-y-4'>
             <div className='space-y-2'>
-                <label>Name</label><br />
-                <input {...register("name", { required: true })} type="text" placeholder='Enter Your fullName' className='bg-white px-6 py- w-80 border rounded-sm'/><br />
-                {errors.name && <span className='text-sm text-red-600'>*This field is required</span>}
+                <label>Full Name</label><br />
+                <input {...register("fullname", { required: true })} type="text" placeholder='Enter Your fullName' className='bg-white px-6 py- w-80 border rounded-sm'/><br />
+                {errors.fullname && <span className='text-sm text-red-600'>*This field is required</span>}
                 </div>
               <div className='space-y-2'>
                 <label>Email</label><br />
