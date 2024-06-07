@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 const bookSchema= mongoose.Schema({
-    "id":Number,
     "name":String,
     "title":String,
     "price":Number,
@@ -8,6 +7,6 @@ const bookSchema= mongoose.Schema({
     "image":String
 })
 
-const Book=mongoose.model("book",bookSchema);
+const Book=mongoose.model("Book",bookSchema);
 
 export default Book;
