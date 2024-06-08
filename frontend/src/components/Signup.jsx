@@ -1,10 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { useForm } from "react-hook-form"
 import Login from './Login'
 import axios from 'axios';
-
+import toast from 'react-hot-toast';
 function Signup() {
+  const location=useLocation();
+  const navigate=useNavigate();
+  const from=location.state?.from?.pathname || '/courses'
   const {
     register,
     handleSubmit,
@@ -17,18 +20,29 @@ function Signup() {
       password:data.password,
     }
   
-  await axios.post("http://localhost:4001/user/signup",userInfo)
+  await axios
+  .post("http://localhost:4001/user/signup",userInfo)
   .then((res )=>{
     console.log(res.data)
     if (res.data){
-      alert("signUp successfull")
+      // alert("signUp successfull")
+      toast.success('signUp successfull');
+      setTimeout(() => {
+        navigate(from,{replace:true});
+      window.location.reload();
+      }, 1000);
+      
     }
+    localStorage.setItem("Users", JSON.stringify(res.data.user));
   }).catch((err) => {
     if(err.response){
       
     }
     console.log("Error : ",err)
-    alert("error: "+ err)
+    toast.error("error: "+ err);
+    setTimeout(() => {
+      
+    }, 3000);
   })
 };
   return (
